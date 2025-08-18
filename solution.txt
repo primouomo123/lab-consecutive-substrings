@@ -1,2 +1,37 @@
 Please add your pseudocode to this file
+
+FUNCTION consecutiveSubstrings(string)
+    Initialize result as an empty array
+    FOR i FROM 0 TO length of string - 1
+        FOR e FROM i + 1 TO length of string
+            ADD substring of string from index i up to (but not including) index e TO result
+        END FOR
+    END FOR
+    RETURN result
+END FUNCTION
+
+
+
 And a written explanation of your solution
+
+I used the .slice() method to generate all consecutive substrings of a string.
+
+I created two nested for loops:
+
+The outer loop (variable i) represents the starting index of the substring.
+
+The inner loop (variable e) represents the ending index + 1 of the substring, because
+.slice(start, end) includes start but excludes end (the ending index with be end - 1).
+
+The loop conditions follow the logic of .slice():
+
+Outer loop: i < string.length → ensures all starting positions are included.
+
+Inner loop: e <= string.length → ensures the last character can be included.
+
+Inside the inner loop, string.slice(i, e) extracts the substring from index i up to (but not
+including) index e, and I add it to the result array.
+
+Finally, the function returns result, which contains all consecutive substrings.
+
+Time complexity: O(n²), because we have two nested loops iterating over the string.
