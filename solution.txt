@@ -34,4 +34,6 @@ including) index e, and I add it to the result array.
 
 Finally, the function returns result, which contains all consecutive substrings.
 
+The type of algorithm is brute-force / nested loops
+
 Time complexity: O(n²), because we have two nested loops iterating over the string.
